@@ -59,6 +59,11 @@ namespace HeneGames.Airplane
 
         [Range(0.1f, 50f)]
         [SerializeField] private float deaccelerating = 5f;
+        
+        [Range(0.1f, 50f)]
+        [SerializeField] private float maxTurboTimer = 5.0f;
+
+        private float turboTimer = 0.0f;
 
         [Header("Engine sound settings")]
         [SerializeField] private AudioSource engineSoundSource;
@@ -164,8 +169,13 @@ namespace HeneGames.Airplane
                 currentSpeed -= deaccelerating * Time.deltaTime;
             }
 
+            UpdateTurbo();
+        }
+
+        private void UpdateTurbo()
+        {
             //Turbo
-            if (Input.GetKey(KeyCode.LeftShift))
+            if (turboTimer <= maxTurboTimer)
             {
                 //Set speed to turbo speed and rotation to turbo values
                 maxSpeed = turboSpeed;
@@ -182,6 +192,8 @@ namespace HeneGames.Airplane
 
                 //Audio
                 currentEngineSoundPitch = turboSoundPitch;
+
+                turboTimer += Time.deltaTime;
             }
             else
             {
@@ -201,6 +213,16 @@ namespace HeneGames.Airplane
                 //Audio
                 currentEngineSoundPitch = defaultSoundPitch;
             }
+        }
+
+        public void Turbo()
+        {
+            turboTimer = 0.0f;
+        }
+
+        public bool IsTurboActive()
+        {
+            return turboTimer <= maxTurboTimer;
         }
 
         #endregion

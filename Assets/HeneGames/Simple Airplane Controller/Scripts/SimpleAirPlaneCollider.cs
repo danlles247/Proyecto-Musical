@@ -10,7 +10,8 @@ namespace HeneGames.Airplane
 
         private void OnTriggerEnter(Collider other)
         {
-            if(other.gameObject.GetComponent<SimpleAirPlaneCollider>() == null)
+            if(other.gameObject.GetComponent<SimpleAirPlaneCollider>() == null && 
+               other.gameObject.layer != LayerMask.NameToLayer("Propulsor"))
             {
                 collideSometing = true;
             }

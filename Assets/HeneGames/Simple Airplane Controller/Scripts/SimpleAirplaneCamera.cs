@@ -31,7 +31,7 @@ namespace HeneGames.Airplane
             //Turbo
             if(!airPlaneController.PlaneIsDead())
             {
-                if (Input.GetKey(KeyCode.LeftShift))
+                if (airPlaneController.IsTurboActive())
                 {
                     ChangeCameraFov(cameraTurboFov);
                 }
