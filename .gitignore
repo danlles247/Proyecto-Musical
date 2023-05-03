@@ -88,3 +88,8 @@ crashlytics-build.properties
 
 # Log files can be ignored.
 fmod_editor.log
+
+# FMOD Temp files
+/FMODAssets/FlyPlane/.user/*
+/FMODAssets/FlyPlane/.cache/*
+/FMODAssets/FlyPlane/.unsaved/*
