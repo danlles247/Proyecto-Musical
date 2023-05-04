@@ -1,0 +1,176 @@
+{
+    "sourceproject": "D:\UCM\4GDV\MUS\Proyecto-Musical\ReaperAssets\PlaneFly/PlaneFly.rpp",
+    "markers": [
+    ],
+    "audiotracks": [
+        {
+            "type": "master",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "Bateria",
+            "instruments": [
+                {
+                    "type": "single",
+                    "start": -12.271707,
+                    "end": 36.500000,
+                    "audio": "Bateria_region_01.wav"
+                }
+            ]
+        },
+        {
+            "type": "group",
+            "name": "Instrumentos",
+            "instruments": [
+
+            ]
+        },
+        {
+            "type": "group",
+            "name": "Piano",
+            "instruments": [
+                {
+                    "type": "single",
+                    "start": -12.271707,
+                    "end": 36.500000,
+                    "audio": "Piano_region_01.wav"
+                }
+            ]
+        },
+        {
+            "type": "group",
+            "name": "Plantilla",
+            "instruments": [
+                {
+                    "type": "single",
+                    "start": -12.271707,
+                    "end": 36.500000,
+                    "audio": "Plantilla_region_01.wav"
+                }
+            ]
+        },
+        {
+            "type": "group",
+            "name": "Piano2",
+            "instruments": [
+                {
+                    "type": "single",
+                    "start": -12.271707,
+                    "end": 36.500000,
+                    "audio": "Piano2_region_01.wav"
+                }
+            ]
+        },
+        {
+            "type": "group",
+            "name": "Piano Kontakt",
+            "instruments": [
+                {
+                    "type": "single",
+                    "start": -12.271707,
+                    "end": 36.500000,
+                    "audio": "Piano Kontakt_region_01.wav"
+                }
+            ]
+        },
+        {
+            "type": "group",
+            "name": "Flauta",
+            "instruments": [
+                {
+                    "type": "single",
+                    "start": -12.271707,
+                    "end": 36.500000,
+                    "audio": "Flauta_region_01.wav"
+                }
+            ]
+        },
+        {
+            "type": "group",
+            "name": "Bongos",
+            "instruments": [
+                {
+                    "type": "single",
+                    "start": -12.271707,
+                    "end": 36.500000,
+                    "audio": "Bongos_region_01.wav"
+                }
+            ]
+        },
+        {
+            "type": "group",
+            "name": "Guitarra",
+            "instruments": [
+                {
+                    "type": "single",
+                    "start": -12.271707,
+                    "end": 36.500000,
+                    "audio": "Guitarra_region_01.wav"
+                }
+            ]
+        },
+        {
+            "type": "group",
+            "name": "Guitarra Rara",
+            "instruments": [
+                {
+                    "type": "single",
+                    "start": -12.271707,
+                    "end": 36.500000,
+                    "audio": "Guitarra Rara_region_01.wav"
+                }
+            ]
+        },
+        {
+            "type": "group",
+            "name": "BeatNormal",
+            "instruments": [
+                {
+                    "type": "single",
+                    "start": -12.271707,
+                    "end": 36.500000,
+                    "audio": "BeatNormal_region_01.wav"
+                }
+            ]
+        },
+        {
+            "type": "group",
+            "name": "Instrumentos 2",
+            "instruments": [
+                {
+                    "type": "single",
+                    "start": -12.271707,
+                    "end": 36.500000,
+                    "audio": "Instrumentos 2_region_01.wav"
+                }
+            ]
+        },
+        {
+            "type": "group",
+            "name": "Sylenth1 #2 1",
+            "instruments": [
+                {
+                    "type": "single",
+                    "start": -12.271707,
+                    "end": 36.500000,
+                    "audio": "Sylenth1 #2 1_region_01.wav"
+                }
+            ]
+        },
+        {
+            "type": "group",
+            "name": "GPT",
+            "instruments": [
+                {
+                    "type": "single",
+                    "start": -12.271707,
+                    "end": 36.500000,
+                    "audio": "GPT_region_01.wav"
+                }
+            ]
+        }
+    ]
+}
