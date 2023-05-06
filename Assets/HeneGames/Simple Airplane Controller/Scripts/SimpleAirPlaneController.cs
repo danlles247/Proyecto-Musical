@@ -230,12 +230,12 @@ namespace HeneGames.Airplane
         #region Audio
         private void AudioSystem()
         {
-            engineSoundSource.pitch = Mathf.Lerp(engineSoundSource.pitch, currentEngineSoundPitch, 10f * Time.deltaTime);
+            //engineSoundSource.pitch = Mathf.Lerp(engineSoundSource.pitch, currentEngineSoundPitch, 10f * Time.deltaTime);
 
-            if (planeIsDead)
-            {
-                engineSoundSource.volume = Mathf.Lerp(engineSoundSource.volume, 0f, 0.1f);
-            }
+            //if (planeIsDead)
+            //{
+            //    engineSoundSource.volume = Mathf.Lerp(engineSoundSource.volume, 0f, 0.1f);
+            //}
         }
 
         #endregion

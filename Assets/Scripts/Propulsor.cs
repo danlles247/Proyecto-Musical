@@ -15,6 +15,8 @@ public class Propulsor : MonoBehaviour
 
         controller.Turbo();
 
+        GetComponentInChildren<ParticleSystem>().Stop();
+
         Debug.Log("TURBO");
     }
 
