@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using FMODUnity;
 
 namespace HeneGames.Airplane
 {
@@ -63,7 +64,7 @@ namespace HeneGames.Airplane
         [Range(0.1f, 50f)]
         [SerializeField] private float maxTurboTimer = 5.0f;
 
-        private float turboTimer = 0.0f;
+        private float turboTimer = 51.0f;
 
         [Header("Engine sound settings")]
         [SerializeField] private AudioSource engineSoundSource;
@@ -89,6 +90,8 @@ namespace HeneGames.Airplane
 
         [Header("Colliders")]
         [SerializeField] private Transform crashCollidersRoot;
+
+        [SerializeField] StudioEventEmitter musicEmitter;
 
         private void Start()
         {
@@ -169,6 +172,7 @@ namespace HeneGames.Airplane
                 currentSpeed -= deaccelerating * Time.deltaTime;
             }
 
+            musicEmitter.EventInstance.setParameterByName("Speed", currentSpeed - 20);
             UpdateTurbo();
         }
 

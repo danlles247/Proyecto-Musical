@@ -30,7 +30,7 @@ public class ParameterController : MonoBehaviour
                 introducingTrack = false;
             }
         }
-        emitter.EventInstance.getParameterByName("Tracks", out param);
+        emitter.EventInstance.getParameterByName("Speed", out param);
     }
 
     public void PlayNextTrack(float value)
