@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{d6b5dd31-600e-43e3-b444-56071778e8a0}">
+		<property name="assetPath">
+			<value>Music/Violin - Danger.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>33.010408163265303</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{15699cda-5e9b-47f3-8755-b35c2bea9c17}</destination>
+		</relationship>
+	</object>
+</objects>
