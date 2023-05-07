@@ -14,15 +14,16 @@ namespace HeneGames.Airplane
         [SerializeField] private float cameraDefaultFov = 60f;
         [SerializeField] private float cameraTurboFov = 40f;
 
-        private void Start()
-        {
-            //Lock and hide mouse
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
+        //private void Start()
+        //{
+        //    //Lock and hide mouse
+        //    //Cursor.lockState = CursorLockMode.Locked;
+        //    //Cursor.visible = false;
+        //}
 
         private void Update()
         {
+            if (!GameManager.Instance.gameStarted) return;
             CameraFovUpdate();
         }
 

@@ -110,6 +110,9 @@ namespace HeneGames.Airplane
 
         private void Update()
         {
+            if (!GameManager.Instance.gameStarted) return;
+
+
             AudioSystem();
 
             //Airplane move only if not dead
