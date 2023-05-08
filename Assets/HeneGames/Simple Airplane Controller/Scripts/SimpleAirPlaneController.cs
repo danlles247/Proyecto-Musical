@@ -3,6 +3,7 @@ using UnityEngine.Rendering.PostProcessing;
 using System.Collections.Generic;
 using System.Collections;
 using FMODUnity;
+using UnityEngine.SceneManagement;
 
 namespace HeneGames.Airplane
 {
@@ -252,7 +253,6 @@ namespace HeneGames.Airplane
             int layerMask = 1 << 10;
             if (Physics.Raycast(transform.position, Vector3.down, out hit, 20.0f, layerMask)) {
                 float distance = (hit.point - transform.position).magnitude;
-                Debug.Log(distance);
                 musicEmitter.EventInstance.setParameterByName("Danger", 1.0f - (distance / 20.0f));
             }
             else
@@ -414,7 +414,13 @@ namespace HeneGames.Airplane
             //Kill player
             planeIsDead = true;
 
-            //Here you can add your own code...
+            StartCoroutine(RestartGame());
+        }
+
+        private IEnumerator RestartGame()
+        {
+            yield return new WaitForSeconds(5);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         #endregion

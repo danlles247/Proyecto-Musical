@@ -12,10 +12,13 @@ public class GameManager : MonoBehaviour
     {
         if (Instance != null)
         {
+            Debug.Log("Destroyed Instance");
             Destroy(gameObject);
             return;
         }
 
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         Instance = this;
         gameStarted = false;
     }
