@@ -94,6 +94,7 @@ namespace HeneGames.Airplane
         [Header("Colliders")]
         [SerializeField] private Transform crashCollidersRoot;
 
+        [Header("Music")]
         [SerializeField] StudioEventEmitter musicEmitter;
 
         [Header("Post-processing Effects")]
@@ -129,9 +130,6 @@ namespace HeneGames.Airplane
         private void Update()
         {
             if (!GameManager.Instance.gameStarted) return;
-
-
-            AudioSystem();
 
             //Airplane move only if not dead
             if (!planeIsDead)
@@ -194,6 +192,7 @@ namespace HeneGames.Airplane
             }
 
             UpdateTurbo();
+            CheckDanger();
         }
 
         private void UpdateTurbo()
@@ -244,6 +243,21 @@ namespace HeneGames.Airplane
                     if (!distortionEffectInProgress)
                         StartCoroutine(StopDistortion());
                 }
+            }
+        }
+
+        private void CheckDanger()
+        {
+            RaycastHit hit;
+            int layerMask = 1 << 10;
+            if (Physics.Raycast(transform.position, Vector3.down, out hit, 20.0f, layerMask)) {
+                float distance = (hit.point - transform.position).magnitude;
+                Debug.Log(distance);
+                musicEmitter.EventInstance.setParameterByName("Danger", 1.0f - (distance / 20.0f));
+            }
+            else
+            {
+                musicEmitter.EventInstance.setParameterByName("Danger", 0.0f);
             }
         }
 
@@ -304,19 +318,6 @@ namespace HeneGames.Airplane
             }
 
             distortionEffectInProgress = false;
-        }
-
-        #endregion
-
-        #region Audio
-        private void AudioSystem()
-        {
-            //engineSoundSource.pitch = Mathf.Lerp(engineSoundSource.pitch, currentEngineSoundPitch, 10f * Time.deltaTime);
-
-            //if (planeIsDead)
-            //{
-            //    engineSoundSource.volume = Mathf.Lerp(engineSoundSource.volume, 0f, 0.1f);
-            //}
         }
 
         #endregion
@@ -452,5 +453,10 @@ namespace HeneGames.Airplane
         }
 
         #endregion
+
+        private void OnDrawGizmos()
+        {
+            Debug.DrawRay(transform.position, Vector3.down * 10.0f, Color.red);
+        }
     }
 }
