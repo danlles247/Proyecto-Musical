@@ -419,7 +419,13 @@ namespace HeneGames.Airplane
 
         private IEnumerator RestartGame()
         {
-            yield return new WaitForSeconds(5);
+            float timer = 0.0f;
+            while(timer < 5.0f)
+            {
+                timer += Time.deltaTime;
+                musicEmitter.EventInstance.setParameterByName("Death", timer);
+                yield return null;
+            }
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 

@@ -6250,11 +6250,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5821500120166250442, guid: bebe5fae0b9f0e94a8a2af3207b79b61, type: 3}
       propertyPath: m_FollowOffset.y
-      value: -2.037852
+      value: -1.285584
       objectReference: {fileID: 0}
     - target: {fileID: 5821500120166250442, guid: bebe5fae0b9f0e94a8a2af3207b79b61, type: 3}
       propertyPath: m_FollowOffset.z
-      value: -12.7364
+      value: -14.79504
       objectReference: {fileID: 0}
     - target: {fileID: 5821500120853101656, guid: bebe5fae0b9f0e94a8a2af3207b79b61, type: 3}
       propertyPath: m_Layer
@@ -6278,15 +6278,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5821500120853101657, guid: bebe5fae0b9f0e94a8a2af3207b79b61, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.000000009313226
+      value: 0.0000000018626451
       objectReference: {fileID: 0}
     - target: {fileID: 5821500120853101657, guid: bebe5fae0b9f0e94a8a2af3207b79b61, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00000009934283
+      value: -0.000000099292535
       objectReference: {fileID: 0}
     - target: {fileID: 5821500120853101657, guid: bebe5fae0b9f0e94a8a2af3207b79b61, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000008398837
+      value: 0.0000000111632446
       objectReference: {fileID: 0}
     - target: {fileID: 5821500120853101662, guid: bebe5fae0b9f0e94a8a2af3207b79b61, type: 3}
       propertyPath: m_Lens.FieldOfView
@@ -6414,11 +6414,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5821500121679384936, guid: bebe5fae0b9f0e94a8a2af3207b79b61, type: 3}
       propertyPath: m_FollowOffset.y
-      value: -2.037852
+      value: -1.285584
       objectReference: {fileID: 0}
     - target: {fileID: 5821500121679384936, guid: bebe5fae0b9f0e94a8a2af3207b79b61, type: 3}
       propertyPath: m_FollowOffset.z
-      value: -12.7364
+      value: -14.79504
       objectReference: {fileID: 0}
     - target: {fileID: 5821500122197631123, guid: bebe5fae0b9f0e94a8a2af3207b79b61, type: 3}
       propertyPath: m_Layer
@@ -6426,11 +6426,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5821500122197631126, guid: bebe5fae0b9f0e94a8a2af3207b79b61, type: 3}
       propertyPath: m_FollowOffset.y
-      value: -2.037852
+      value: -1.285584
       objectReference: {fileID: 0}
     - target: {fileID: 5821500122197631126, guid: bebe5fae0b9f0e94a8a2af3207b79b61, type: 3}
       propertyPath: m_FollowOffset.z
-      value: -12.7364
+      value: -14.79504
       objectReference: {fileID: 0}
     - target: {fileID: 6923667051900119557, guid: bebe5fae0b9f0e94a8a2af3207b79b61, type: 3}
       propertyPath: m_Layer
