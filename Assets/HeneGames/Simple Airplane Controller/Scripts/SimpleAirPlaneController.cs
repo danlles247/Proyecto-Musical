@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 using System.Collections.Generic;
+using System.Collections;
 using FMODUnity;
 
 namespace HeneGames.Airplane
@@ -19,6 +21,7 @@ namespace HeneGames.Airplane
         private float currentEngineLightIntensity;
         private float currentEngineSoundPitch;
         private bool planeIsDead;
+        private bool turboEndInFrame;
         private Rigidbody rb;
 
         #endregion
@@ -93,6 +96,18 @@ namespace HeneGames.Airplane
 
         [SerializeField] StudioEventEmitter musicEmitter;
 
+        [Header("Post-processing Effects")]
+        [SerializeField] PostProcessVolume processVolume;
+
+        [Range(-100f, 100f)]
+        [SerializeField] float distortionIntensity;
+
+        [Range(0.1f, 5f)]
+        [SerializeField] float distortionScale;
+
+        LensDistortion lensDistortion;
+
+        private bool distortionEffectInProgress;
         private void Start()
         {
             //Setup speeds
@@ -104,6 +119,9 @@ namespace HeneGames.Airplane
             rb.isKinematic = true;
             rb.useGravity = false;
             rb.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
+
+            //Get volume
+            processVolume.profile.TryGetSettings(out lensDistortion);
 
             SetupColliders(crashCollidersRoot);
         }
@@ -201,6 +219,8 @@ namespace HeneGames.Airplane
                 currentEngineSoundPitch = turboSoundPitch;
 
                 turboTimer += Time.deltaTime;
+
+                turboEndInFrame = !(turboTimer <= maxTurboTimer);
             }
             else
             {
@@ -219,17 +239,64 @@ namespace HeneGames.Airplane
 
                 //Audio
                 currentEngineSoundPitch = defaultSoundPitch;
+
+                if(turboEndInFrame){
+                    turboEndInFrame = false;
+                    if (!distortionEffectInProgress)
+                        StartCoroutine(StopDistortion());
+                }
             }
         }
 
         public void Turbo()
         {
             turboTimer = 0.0f;
+            
+            if(!distortionEffectInProgress)
+                StartCoroutine(Distortion());
         }
 
         public bool IsTurboActive()
         {
             return turboTimer <= maxTurboTimer;
+        }
+
+        IEnumerator Distortion()
+        {
+            distortionEffectInProgress = true;
+
+            float lerp = 0.0f;
+            float initialIntensity = lensDistortion.intensity.value;
+            float initialScale = lensDistortion.scale.value;
+
+            while(lerp < 1.0f)
+            {
+                lensDistortion.intensity.value = Mathf.Lerp(initialIntensity, distortionIntensity, lerp);
+                lensDistortion.scale.value = Mathf.Lerp(initialScale, distortionScale, lerp);
+                lerp += Time.deltaTime * 1.5f;
+                yield return null;
+            }
+
+            distortionEffectInProgress = false;
+        }
+
+        IEnumerator StopDistortion()
+        {
+            distortionEffectInProgress = true;
+
+            float lerp = 0.0f;
+            float initialIntensity = lensDistortion.intensity.value;
+            float initialScale = lensDistortion.scale.value;
+
+            while (lerp < 1.0f)
+            {
+                lensDistortion.intensity.value = Mathf.Lerp(initialIntensity, 0, lerp);
+                lensDistortion.scale.value = Mathf.Lerp(initialScale, 1, lerp);
+                lerp += Time.deltaTime * 10f;
+                yield return null;
+            }
+
+            distortionEffectInProgress = false;
         }
 
         #endregion

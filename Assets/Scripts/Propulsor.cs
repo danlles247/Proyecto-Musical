@@ -7,8 +7,6 @@ public class Propulsor : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("TURBO???");
-
         if (other.gameObject.layer != LayerMask.NameToLayer("Plane")) return;
 
         SimpleAirPlaneController controller = other.gameObject.GetComponentInParent<SimpleAirPlaneController>();
@@ -16,8 +14,6 @@ public class Propulsor : MonoBehaviour
         controller.Turbo();
 
         GetComponentInChildren<ParticleSystem>().Stop();
-
-        Debug.Log("TURBO");
     }
 
 }
