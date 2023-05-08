@@ -6274,19 +6274,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5821500120853101657, guid: bebe5fae0b9f0e94a8a2af3207b79b61, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9999434
+      value: 0.9999433
       objectReference: {fileID: 0}
     - target: {fileID: 5821500120853101657, guid: bebe5fae0b9f0e94a8a2af3207b79b61, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.010644811
+      value: 0.010644817
       objectReference: {fileID: 0}
     - target: {fileID: 5821500120853101657, guid: bebe5fae0b9f0e94a8a2af3207b79b61, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000024744821
+      value: 0.000000025243756
       objectReference: {fileID: 0}
     - target: {fileID: 5821500120853101657, guid: bebe5fae0b9f0e94a8a2af3207b79b61, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000006014118
+      value: -0.0000000041893506
       objectReference: {fileID: 0}
     - target: {fileID: 5821500120853101662, guid: bebe5fae0b9f0e94a8a2af3207b79b61, type: 3}
       propertyPath: m_Lens.FieldOfView
@@ -6338,11 +6338,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5821500121559426816, guid: bebe5fae0b9f0e94a8a2af3207b79b61, type: 3}
       propertyPath: m_XAxis.m_InputAxisName
-      value: Mouse X
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5821500121559426816, guid: bebe5fae0b9f0e94a8a2af3207b79b61, type: 3}
       propertyPath: m_YAxis.m_InputAxisName
-      value: Mouse Y
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5821500121559426816, guid: bebe5fae0b9f0e94a8a2af3207b79b61, type: 3}
       propertyPath: m_YAxis.m_InputAxisValue
