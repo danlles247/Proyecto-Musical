@@ -193,7 +193,6 @@ namespace HeneGames.Airplane
                 currentSpeed -= deaccelerating * Time.deltaTime;
             }
 
-            musicEmitter.EventInstance.setParameterByName("Speed", currentSpeed - 20);
             UpdateTurbo();
         }
 
@@ -274,6 +273,10 @@ namespace HeneGames.Airplane
                 lensDistortion.intensity.value = Mathf.Lerp(initialIntensity, distortionIntensity, lerp);
                 lensDistortion.scale.value = Mathf.Lerp(initialScale, distortionScale, lerp);
                 lerp += Time.deltaTime * 1.5f;
+
+                //Sound
+                musicEmitter.EventInstance.setParameterByName("Speed", Mathf.Lerp(0, 20, lerp));
+
                 yield return null;
             }
 
@@ -292,7 +295,11 @@ namespace HeneGames.Airplane
             {
                 lensDistortion.intensity.value = Mathf.Lerp(initialIntensity, 0, lerp);
                 lensDistortion.scale.value = Mathf.Lerp(initialScale, 1, lerp);
-                lerp += Time.deltaTime * 10f;
+                lerp += Time.deltaTime * 5f;
+
+                //Sound
+                musicEmitter.EventInstance.setParameterByName("Speed", Mathf.Lerp(20, 0, lerp));
+
                 yield return null;
             }
 
